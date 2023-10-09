@@ -1,0 +1,111 @@
+<title>Maxent model for Paruroctonus_silvestrii</title>
+<CENTER><H1>Maxent model for Paruroctonus_silvestrii</H1></CENTER>
+<br> This page contains some analysis of the Maxent model for Paruroctonus_silvestrii, created Mon Oct 09 11:36:13 PDT 2023 using Maxent version 3.4.4.  If you would like to do further analyses, the raw data used here is linked to at the end of this page.<br>
+<br><HR><H2>Analysis of omission/commission</H2>
+The following picture shows the omission rate and predicted area as a function of the cumulative threshold.  The omission rate is is calculated both on the training presence records, and (if test data are used) on the test records.  The omission rate should be close to the predicted omission, because of the definition of the cumulative threshold.
+<br><img src="plots\Paruroctonus_silvestrii_omission.png"><br>
+<br> The next picture is the receiver operating characteristic (ROC) curve for the same data.  Note that the specificity is defined using predicted area, rather than true commission (see the paper by Phillips, Anderson and Schapire cited on the help page for discussion of what this means).  This implies that the maximum achievable AUC is less than 1.  If test data is drawn from the Maxent distribution itself, then the maximum possible test AUC would be 0.946 rather than 1; in practice the test AUC may exceed this bound.
+<br><img src="plots\Paruroctonus_silvestrii_roc.png"><br>
+<br>
+<br>
+Some common thresholds and corresponding omission rates are as follows.  If test data are available, binomial probabilities are calculated exactly if the number of test samples is at most 25, otherwise using a normal approximation to the binomial.  These are 1-sided p-values for the null hypothesis that test points are predicted no better than by a random prediction with the same fractional predicted area.  The "Balance" threshold minimizes 6 * training omission rate + .04 * cumulative threshold + 1.6 * fractional predicted area.<br>
+<br><table border cols=4 cellpadding=3><tr><th>Cumulative threshold</th><th>Cloglog threshold</th><th>Description</th><th>Fractional predicted area</th><th>Training omission rate</th><tr align=center><td>1.000</td><td>0.020</td><td>Fixed cumulative value 1</td><td>0.280</td><td>0.000</td><tr align=center><td>5.000</td><td>0.102</td><td>Fixed cumulative value 5</td><td>0.176</td><td>0.017</td><tr align=center><td>10.000</td><td>0.200</td><td>Fixed cumulative value 10</td><td>0.131</td><td>0.054</td><tr align=center><td>1.483</td><td>0.032</td><td>Minimum training presence</td><td>0.253</td><td>0.000</td><tr align=center><td>12.291</td><td>0.243</td><td>10 percentile training presence</td><td>0.118</td><td>0.096</td><tr align=center><td>13.897</td><td>0.267</td><td>Equal training sensitivity and specificity</td><td>0.110</td><td>0.109</td><tr align=center><td>8.524</td><td>0.172</td><td>Maximum training sensitivity plus specificity</td><td>0.141</td><td>0.038</td><tr align=center><td>1.483</td><td>0.032</td><td>Balance training omission, predicted area and threshold value</td><td>0.253</td><td>0.000</td><tr align=center><td>8.345</td><td>0.168</td><td>Equate entropy of thresholded and original distributions</td><td>0.143</td><td>0.038</td></table><br>
+<br><HR><H2>Pictures of the model</H2>
+This is a representation of the Maxent model for Paruroctonus_silvestrii.  Warmer colors show areas with better predicted conditions.  White dots show the presence locations used for training, while violet dots show test locations.  Click on the image for a full-size version.<br>
+<br><a href = "plots/Paruroctonus_silvestrii.png"> <img src="plots/Paruroctonus_silvestrii.png" width=600></a><br>
+<br>(A link to the Explain tool was not made for this model.  The model uses product features, while the Explain tool can only be used for additive models.)<br><br>
+<br><HR><H2>Response curves</H2>
+<br>These curves show how each environmental variable affects the Maxent prediction.
+The 
+curves show how the predicted probability of presence changes as each environmental variable is varied, keeping all other environmental variables at their average sample value. Click on a response curve to see a larger version.  Note that the curves can be hard to interpret if you have strongly correlated variables, as the model may depend on the correlations in ways that are not evident in the curves.  In other words, the curves show the marginal effect of changing exactly one variable, whereas the model may take advantage of sets of variables changing together.<br><br>
+<a href = "plots/Paruroctonus_silvestrii_actual_evapotranspiration.png"> <img src="plots/Paruroctonus_silvestrii_actual_evapotranspiration_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio10_mean_temp_warm.png"> <img src="plots/Paruroctonus_silvestrii_bio10_mean_temp_warm_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio11_mean_temp_cold.png"> <img src="plots/Paruroctonus_silvestrii_bio11_mean_temp_cold_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio12_total_precip.png"> <img src="plots/Paruroctonus_silvestrii_bio12_total_precip_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio13_precip_wettest_month.png"> <img src="plots/Paruroctonus_silvestrii_bio13_precip_wettest_month_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio14_precip_driest_month.png"> <img src="plots/Paruroctonus_silvestrii_bio14_precip_driest_month_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio15_precip_seasonality.png"> <img src="plots/Paruroctonus_silvestrii_bio15_precip_seasonality_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio16_precip_wettest_q.png"> <img src="plots/Paruroctonus_silvestrii_bio16_precip_wettest_q_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio17_precip_driest_q.png"> <img src="plots/Paruroctonus_silvestrii_bio17_precip_driest_q_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio18_precip_warmest.png"> <img src="plots/Paruroctonus_silvestrii_bio18_precip_warmest_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio19_precip_coldest.png"> <img src="plots/Paruroctonus_silvestrii_bio19_precip_coldest_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio1_mean_temp.png"> <img src="plots/Paruroctonus_silvestrii_bio1_mean_temp_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio2_mean_temp_range.png"> <img src="plots/Paruroctonus_silvestrii_bio2_mean_temp_range_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio3_isothermality.png"> <img src="plots/Paruroctonus_silvestrii_bio3_isothermality_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio4_temp_seasonality.png"> <img src="plots/Paruroctonus_silvestrii_bio4_temp_seasonality_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio5_max_temp.png"> <img src="plots/Paruroctonus_silvestrii_bio5_max_temp_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio6_min_temp.png"> <img src="plots/Paruroctonus_silvestrii_bio6_min_temp_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio7_temp_range.png"> <img src="plots/Paruroctonus_silvestrii_bio7_temp_range_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_clay.png"> <img src="plots/Paruroctonus_silvestrii_clay_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_elevation.png"> <img src="plots/Paruroctonus_silvestrii_elevation_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_net_primary_productivity.png"> <img src="plots/Paruroctonus_silvestrii_net_primary_productivity_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_pH.png"> <img src="plots/Paruroctonus_silvestrii_pH_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_sand.png"> <img src="plots/Paruroctonus_silvestrii_sand_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_silt.png"> <img src="plots/Paruroctonus_silvestrii_silt_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_slope.png"> <img src="plots/Paruroctonus_silvestrii_slope_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_snowcover_depth.png"> <img src="plots/Paruroctonus_silvestrii_snowcover_depth_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_soil_moisture.png"> <img src="plots/Paruroctonus_silvestrii_soil_moisture_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_solar_radiation.png"> <img src="plots/Paruroctonus_silvestrii_solar_radiation_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_vapor_pressure.png"> <img src="plots/Paruroctonus_silvestrii_vapor_pressure_thumb.png"></a>
+<br>
+<br>In contrast to the above marginal response curves, each of the following curves represents a different model, namely, a Maxent model created using only the corresponding variable.  These plots reflect the dependence of predicted suitability both on the selected variable and on dependencies induced by correlations between the selected variable and other variables.  They may be easier to interpret if there are strong correlations between variables.<br><br>
+<a href = "plots/Paruroctonus_silvestrii_actual_evapotranspiration_only.png"> <img src="plots/Paruroctonus_silvestrii_actual_evapotranspiration_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio10_mean_temp_warm_only.png"> <img src="plots/Paruroctonus_silvestrii_bio10_mean_temp_warm_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio11_mean_temp_cold_only.png"> <img src="plots/Paruroctonus_silvestrii_bio11_mean_temp_cold_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio12_total_precip_only.png"> <img src="plots/Paruroctonus_silvestrii_bio12_total_precip_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio13_precip_wettest_month_only.png"> <img src="plots/Paruroctonus_silvestrii_bio13_precip_wettest_month_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio14_precip_driest_month_only.png"> <img src="plots/Paruroctonus_silvestrii_bio14_precip_driest_month_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio15_precip_seasonality_only.png"> <img src="plots/Paruroctonus_silvestrii_bio15_precip_seasonality_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio16_precip_wettest_q_only.png"> <img src="plots/Paruroctonus_silvestrii_bio16_precip_wettest_q_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio17_precip_driest_q_only.png"> <img src="plots/Paruroctonus_silvestrii_bio17_precip_driest_q_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio18_precip_warmest_only.png"> <img src="plots/Paruroctonus_silvestrii_bio18_precip_warmest_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio19_precip_coldest_only.png"> <img src="plots/Paruroctonus_silvestrii_bio19_precip_coldest_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio1_mean_temp_only.png"> <img src="plots/Paruroctonus_silvestrii_bio1_mean_temp_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio2_mean_temp_range_only.png"> <img src="plots/Paruroctonus_silvestrii_bio2_mean_temp_range_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio3_isothermality_only.png"> <img src="plots/Paruroctonus_silvestrii_bio3_isothermality_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio4_temp_seasonality_only.png"> <img src="plots/Paruroctonus_silvestrii_bio4_temp_seasonality_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio5_max_temp_only.png"> <img src="plots/Paruroctonus_silvestrii_bio5_max_temp_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio6_min_temp_only.png"> <img src="plots/Paruroctonus_silvestrii_bio6_min_temp_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_bio7_temp_range_only.png"> <img src="plots/Paruroctonus_silvestrii_bio7_temp_range_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_clay_only.png"> <img src="plots/Paruroctonus_silvestrii_clay_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_elevation_only.png"> <img src="plots/Paruroctonus_silvestrii_elevation_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_net_primary_productivity_only.png"> <img src="plots/Paruroctonus_silvestrii_net_primary_productivity_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_pH_only.png"> <img src="plots/Paruroctonus_silvestrii_pH_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_sand_only.png"> <img src="plots/Paruroctonus_silvestrii_sand_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_silt_only.png"> <img src="plots/Paruroctonus_silvestrii_silt_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_slope_only.png"> <img src="plots/Paruroctonus_silvestrii_slope_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_snowcover_depth_only.png"> <img src="plots/Paruroctonus_silvestrii_snowcover_depth_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_soil_moisture_only.png"> <img src="plots/Paruroctonus_silvestrii_soil_moisture_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_solar_radiation_only.png"> <img src="plots/Paruroctonus_silvestrii_solar_radiation_only_thumb.png"></a>
+<a href = "plots/Paruroctonus_silvestrii_vapor_pressure_only.png"> <img src="plots/Paruroctonus_silvestrii_vapor_pressure_only_thumb.png"></a>
+<br>
+<br><HR><H2>Analysis of variable contributions</H2><br>
+The following table gives estimates of relative contributions of the environmental variables to the Maxent model.  To determine the first estimate, in each iteration of the training algorithm, the increase in regularized gain is added to the contribution of the corresponding variable, or subtracted from it if the change to the absolute value of lambda is negative.  For the second estimate, for each environmental variable in turn, the values of that variable on training presence and background data are randomly permuted.  The model is reevaluated on the permuted data, and the resulting drop in training AUC is shown in the table, normalized to percentages.  As with the variable jackknife, variable contributions should be interpreted with caution when the predictor variables are correlated.<br>
+<br><table border cols=3><tr><th>Variable</th><th>Percent contribution</th><th>Permutation importance</th><tr align=right><td>bio16_precip_wettest_q</td><td>33</td><td>1.5</td></tr><tr align=right><td>soil_moisture</td><td>15.7</td><td>29.9</td></tr><tr align=right><td>bio11_mean_temp_cold</td><td>12</td><td>0.1</td></tr><tr align=right><td>bio15_precip_seasonality</td><td>9.4</td><td>29.5</td></tr><tr align=right><td>snowcover_depth</td><td>7.6</td><td>1.4</td></tr><tr align=right><td>slope</td><td>3.5</td><td>1.6</td></tr><tr align=right><td>bio2_mean_temp_range</td><td>2.8</td><td>0.5</td></tr><tr align=right><td>bio7_temp_range</td><td>2.2</td><td>0.5</td></tr><tr align=right><td>sand</td><td>2.2</td><td>1.3</td></tr><tr align=right><td>solar_radiation</td><td>1.6</td><td>2.3</td></tr><tr align=right><td>bio14_precip_driest_month</td><td>1.2</td><td>0.6</td></tr><tr align=right><td>bio10_mean_temp_warm</td><td>1.1</td><td>1.7</td></tr><tr align=right><td>bio4_temp_seasonality</td><td>1.1</td><td>4.9</td></tr><tr align=right><td>pH</td><td>0.9</td><td>4.7</td></tr><tr align=right><td>net_primary_productivity</td><td>0.9</td><td>2</td></tr><tr align=right><td>vapor_pressure</td><td>0.8</td><td>0.3</td></tr><tr align=right><td>silt</td><td>0.8</td><td>0.8</td></tr><tr align=right><td>bio3_isothermality</td><td>0.8</td><td>0.9</td></tr><tr align=right><td>bio6_min_temp</td><td>0.6</td><td>2.6</td></tr><tr align=right><td>bio18_precip_warmest</td><td>0.5</td><td>3.6</td></tr><tr align=right><td>elevation</td><td>0.3</td><td>0.5</td></tr><tr align=right><td>bio1_mean_temp</td><td>0.2</td><td>2.6</td></tr><tr align=right><td>bio17_precip_driest_q</td><td>0.2</td><td>0.1</td></tr><tr align=right><td>bio13_precip_wettest_month</td><td>0.1</td><td>0.8</td></tr><tr align=right><td>actual_evapotranspiration</td><td>0.1</td><td>3.6</td></tr><tr align=right><td>bio5_max_temp</td><td>0.1</td><td>0.5</td></tr><tr align=right><td>bio12_total_precip</td><td>0</td><td>0.9</td></tr><tr align=right><td>clay</td><td>0</td><td>0.3</td></tr><tr align=right><td>bio19_precip_coldest</td><td>0</td><td>0</td></tr></table><br><br>
+The following picture shows the results of the jackknife test of variable importance.  The environmental variable with highest gain when used in isolation is bio15_precip_seasonality, which therefore appears to have the most useful information by itself.  The environmental variable that decreases the gain the most when it is omitted is soil_moisture, which therefore appears to have the most information that isn't present in the other variables.<br>
+<br><img src="plots\Paruroctonus_silvestrii_jacknife.png"><br>
+<br><HR><H2>Raw data outputs and control parameters</H2><br>
+The data used in the above analysis is contained in the next links.  Please see the Help button for more information on these.<br>
+<a href = "Paruroctonus_silvestrii.asc">The model applied to the training environmental layers</a><br>
+<a href = "Paruroctonus_silvestrii.lambdas">The coefficients of the model</a><br>
+<a href = "Paruroctonus_silvestrii_omission.csv">The omission and predicted area for varying cumulative and raw thresholds</a><br>
+<a href = "Paruroctonus_silvestrii_samplePredictions.csv">The prediction strength at the training and (optionally) test presence sites</a><br>
+<a href = "maxentResults.csv">Results for all species modeled in the same Maxent run, with summary statistics and (optionally) jackknife results</a><br>
+<br><br>
+Regularized training gain is 1.960, training AUC is 0.955, unregularized training gain is 2.096.<br>
+Algorithm terminated after 500 iterations (11 seconds).<br>
+<br>
+The follow settings were used during the run:<br>
+239 presence records used for training.<br>
+10238 points used to determine the Maxent distribution (background points and presence points).<br>
+Environmental layers used (all continuous): actual_evapotranspiration bio10_mean_temp_warm bio11_mean_temp_cold bio12_total_precip bio13_precip_wettest_month bio14_precip_driest_month bio15_precip_seasonality bio16_precip_wettest_q bio17_precip_driest_q bio18_precip_warmest bio19_precip_coldest bio1_mean_temp bio2_mean_temp_range bio3_isothermality bio4_temp_seasonality bio5_max_temp bio6_min_temp bio7_temp_range clay elevation net_primary_productivity pH sand silt slope snowcover_depth soil_moisture solar_radiation vapor_pressure<br>
+Regularization values: linear/quadratic/product: 0.050, categorical: 0.250, threshold: 1.000, hinge: 0.500<br>
+Feature types used: hinge product linear quadratic<br>
+responsecurves: true<br>
+jackknife: true<br>
+outputdirectory: G:\My Drive\Scorpion Publication\Description Publications\Paruroctonus tulare\Description\data_files\maxent_outputs<br>
+samplesfile: G:\My Drive\Scorpion Publication\Description Publications\Paruroctonus tulare\Description\data_files\maxent_intputs.csv<br>
+environmentallayers: G:\My Drive\Scorpion Publication\Mapping\geographic_data\maxent_rasters<br>
+Command line used: <br>
+<br>
+Command line to repeat this species model: java density.MaxEnt nowarnings noprefixes -E "" -E Paruroctonus_silvestrii responsecurves jackknife "outputdirectory=G:\My Drive\Scorpion Publication\Description Publications\Paruroctonus tulare\Description\data_files\maxent_outputs" "samplesfile=G:\My Drive\Scorpion Publication\Description Publications\Paruroctonus tulare\Description\data_files\maxent_intputs.csv" "environmentallayers=G:\My Drive\Scorpion Publication\Mapping\geographic_data\maxent_rasters"<br>

@@ -1,0 +1,37 @@
+actual_evapotranspiration, 0.0, 31.0, 496.0
+bio10_mean_temp_warm, 0.0, 7.0, 36.0
+bio11_mean_temp_cold, 0.0, -9.0, 15.0
+bio12_total_precip, 0.0, 56.0, 2128.0
+bio13_precip_wettest_month, 0.0, 10.0, 372.0
+bio14_precip_driest_month, -65.8918158533326, 0.0, 37.0
+bio15_precip_seasonality, 8.863382210638356, 10.0, 110.0
+bio16_precip_wettest_q, 0.0, 26.0, 1063.0
+bio17_precip_driest_q, 77.9259236247662, 2.0, 130.0
+bio18_precip_warmest, -38.43869261573476, 2.0, 152.0
+bio19_precip_coldest, 0.0, 18.0, 1002.0
+bio1_mean_temp, 28.83753628436585, -3.0, 24.0
+bio2_mean_temp_range, 0.0, 7.0, 21.0
+bio3_isothermality, 0.0, 33.0, 69.0
+bio4_temp_seasonality, 0.0, 159.0, 1004.0
+bio5_max_temp, 6.1996917817572745, 15.0, 46.0
+bio6_min_temp, 0.0, -15.0, 10.0
+bio7_temp_range, 0.0, 13.0, 47.0
+clay, 0.0, 15.0, 668.0
+elevation, -4.505299085478385, -85.0, 4161.0
+net_primary_productivity, 0.0, 1270.0, 19740.0
+pH, 1.084606920350596, 50.0, 97.0
+sand, 0.0, 24.0, 864.0
+silt, 0.0, 71.0, 674.0
+slope, 0.0, 0.0, 56.0
+snowcover_depth, 0.0, 0.0, 365.0
+soil_moisture, -49.232240009335754, 0.0, 477.0
+solar_radiation, 0.0, 1400.0, 2218.0
+vapor_pressure, 0.0, 71.0, 477.0
+bio11_mean_temp_cold^2, -11.358205061620055, 0.0, 225.0
+bio6_min_temp^2, -9.229988371135422, 0.0, 225.0
+sand^2, -11.31213717512407, 576.0, 746496.0
+vapor_pressure^2, 34.73574985072028, 5041.0, 227529.0
+linearPredictorNormalizer, 52.018962277774584
+densityNormalizer, 17.145036341415505
+numBackgroundPoints, 10012
+entropy, 4.438310458467899
